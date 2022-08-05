@@ -33,11 +33,18 @@ for(let i=0;i<size*size;i++) {   // 256 = 16*16
       event.preventDefault();
    })
    square.addEventListener('touchmove',function(event){
-      event.target.style.backgroundColor = "black";
+      var touch = event.touches[0];
+		var mouseEvent =  new MouseEvent("mousemove",{
+			clientX:touch.clientX,
+			clientY:touch.clientY
+		});
+		square.dispatchEvent(mouseEvent)
+	},false);
+   event.target.style.backgroundColor = "black";
       event.preventDefault();
-   })
+   }
 }
-}
+
 
 // Change Grid Number using slider
 function changeSize(value) {
