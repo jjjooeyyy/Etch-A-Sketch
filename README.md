@@ -4,6 +4,7 @@
 
 ## View the demo
 Play [Etch-A-Sketch](https://your-drawingpad.netlify.app)
+- It only supports web browser for now:) 
 
 ## Prerequisite for this project
 - Understanding of basic JS
