@@ -32,6 +32,10 @@ for(let i=0;i<size*size;i++) {   // 256 = 16*16
       event.target.style.backgroundColor = "black";
       event.preventDefault();
    })
+   square.addEventListener('touchmove',function(event){
+      event.target.style.backgroundColor = "black";
+      event.preventDefault();
+   })
 }
 }
 
