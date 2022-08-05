@@ -28,6 +28,10 @@ for(let i=0;i<size*size;i++) {   // 256 = 16*16
  square.addEventListener('mouseover', function(event) { // everytime when mouse over the grid, color will be changed
    event.target.style.backgroundColor = "black"; // the default color will be black
    })
+   square.addEventListener('touchstart', function(event){
+      event.target.style.backgroundColor = "black";
+      event.preventDefault();
+   })
 }
 }
 
@@ -111,3 +115,8 @@ window.onload = () => {
    screenGrids.textContent = defaultGridSize; // the HTML content will back to 16 (default) 
    document.getElementById('sizeSlider').value = 16; // the range bar will back to 16 (default) 
 }
+
+/***************************/
+/****** Mobile Device *****/
+/***************************/
+
