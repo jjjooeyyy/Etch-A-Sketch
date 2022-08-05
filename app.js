@@ -28,21 +28,11 @@ for(let i=0;i<size*size;i++) {   // 256 = 16*16
  square.addEventListener('mouseover', function(event) { // everytime when mouse over the grid, color will be changed
    event.target.style.backgroundColor = "black"; // the default color will be black
    })
-   square.addEventListener('touchstart', function(event){
-      event.target.style.backgroundColor = "black";
-      event.preventDefault();
-   })
-   square.addEventListener('touchmove',function(event){
-      var touch = event.touches[0];
-		var mouseEvent =  new MouseEvent("mousemove",{
-			clientX:touch.clientX,
-			clientY:touch.clientY
-		});
-		square.dispatchEvent(mouseEvent)
-	},false);
-   event.target.style.backgroundColor = "black";
-      event.preventDefault();
-   }
+ square.addEventListener('touchstart',function(e){
+   e.target.style.backgroundColor = "black";
+   e.preventDefault();
+ })
+}
 }
 
 
@@ -70,6 +60,10 @@ function erase() {
      cell[i].addEventListener('mouseover', function(event) {
         event.target.style.backgroundColor = 'white'; // change color to white, erase 
      })
+     cell[i].addEventListener('touchstart',function(e){
+      e.target.style.backgroundColor = "white";
+      e.preventDefault();
+    })
   }
 }
 
@@ -92,6 +86,9 @@ rgb.addEventListener('click', function() {
       cell[i].addEventListener('mouseover', function(event) {
          event.target.style.backgroundColor = getRandomColor();
       })
+      cell[i].addEventListener('touchstart', function(event) {
+         event.target.style.backgroundColor = getRandomColor();
+      })
    }
 })
 
@@ -103,7 +100,10 @@ black.addEventListener('click',function() {
       cell[i].addEventListener('mouseover', function(event) {
          event.target.style.backgroundColor = 'black';
       })
-   }
+      cell[i].addEventListener('touchstart', function(event) {
+         event.target.style.backgroundColor = 'black';
+   })
+}
 })
 
 // Access customise color
@@ -114,6 +114,9 @@ function customiseColor() {
    let cell = gridSquare.children;
    for(let i=0;i<currentGridSize*currentGridSize;i++) {
       cell[i].addEventListener('mouseover', function(event) {
+         event.target.style.backgroundColor = newColor;
+      })
+      cell[i].addEventListener('touchstart', function(event) {
          event.target.style.backgroundColor = newColor;
       })
 }
@@ -127,7 +130,4 @@ window.onload = () => {
    document.getElementById('sizeSlider').value = 16; // the range bar will back to 16 (default) 
 }
 
-/***************************/
-/****** Mobile Device *****/
-/***************************/
 
