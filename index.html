@@ -10,23 +10,31 @@
 
     <body>
         <header><h1 id="title">Etch-a-Sketch</h1></header>
+
         <div class="container">
+
+            <div class="btn">
+                <button id="reset">Reset</button>
+                <button id="eraser">Eraser</button>
+                <button id="black">Black</button>
+                <button id="rgb">RGB</button>
+                <div class="color-picker"><input type="color" id="colorPicker">
+                <br><p>Pick your own color!</p></div>
+           
+            <div class="chooseGridSize">
+                <input type="range" min="2" max="100" id="sizeSlider"> 
+                <!-- At least have 2 grids, and at most 100 grids, default is 16-->
+                <p class="current">Number of Grid:16</p> 
+            </div>
+            </div>
+
         <div class="gridSquare"></div>
-        <div class="btn">
-            <button id="reset">Reset</button>
-            <button id="eraser">Eraser</button>
-            <button id="black">Black</button>
-            <button id="rgb">RGB</button>
-            <div class="color-picker"><input type="color" id="colorPicker">
-            <br><p>Pick your own color!</p></div>
-       
-        <div class="chooseGridSize">
-            <input type="range" min="2" max="100" id="sizeSlider"> 
-            <!-- At least have 2 grids, and at most 100 grids, default is 16-->
-            <p class="current">16</p> 
         </div>
-        </div>
-        </div>
+
         <script src="/app.js"></script>
+
+        <footer>
+            <p>< ! - - Made by Joey ☺ - - ></p>
+        </footer>
     </body>
 </html>

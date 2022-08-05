@@ -39,7 +39,7 @@ for(let i=0;i<size*size;i++) {   // 256 = 16*16
 // Change Grid Number using slider
 function changeSize(value) {
 let newSize = document.getElementById('sizeSlider').value; // get slider value
-screenGrids.textContent = newSize; // The HTML content will show current slide value
+screenGrids.textContent = newSize + "x" + newSize; // The HTML content will show current slide value
 gridSquare.innerHTML = ''; // clear drawing and the grid template
 setUpGrid(newSize); //set up the grid size according to the slide value
 }
@@ -48,7 +48,7 @@ setUpGrid(newSize); //set up the grid size according to the slide value
 function clearGrid() {
    gridSquare.innerHTML = ''; // clear drawing and the grid template
    setUpGrid(defaultGridSize); // then setup the grid again
-   screenGrids.textContent = defaultGridSize; // the HTML content will back to 16 (default) 
+   screenGrids.textContent = defaultGridSize + "x" + defaultGridSize; // the HTML content will back to 16 (default) 
    document.getElementById('sizeSlider').value = 16; // the range bar will back to 16 (default) 
 }
 
@@ -126,7 +126,7 @@ function customiseColor() {
 // Start
 window.onload = () => {
    setUpGrid(defaultGridSize);
-   screenGrids.textContent = defaultGridSize; // the HTML content will back to 16 (default) 
+   screenGrids.textContent = defaultGridSize + "x" + defaultGridSize; // the HTML content will back to 16 (default) 
    document.getElementById('sizeSlider').value = 16; // the range bar will back to 16 (default) 
 }
 
